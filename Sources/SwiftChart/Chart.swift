@@ -154,10 +154,19 @@ public class Chart {
         let startX = 70 + ((self.width - 80) / 2) - (stepXpx * (series.count / 2));
         let groupAxisXText = self.svg.addGroup();
         for (i, ser) in series.enumerated() {
-            let text = groupAxisXText.addText(x: startX + stepXpx * i, y: self.height - 15);
+            if (ser == "") {
+                continue;
+            }
+
+            let x = startX + stepXpx * i;
+            let text = groupAxisXText.addText(x: x, y: self.height - 15);
             text.params["style"] = "color:#666666; font-size:11px; fill:#666666;";
-            text.params["text-anchor"] = "middle";
+            text.params["text-anchor"] = (i < series.count - 1) ? "middle" : "end";
             text.addTSpan(text: ser);
+
+            // Добавляем вертикальную полоску
+            pathV.move(x: x, y: 5);
+            pathV.lineTo(x: x, y: self.height - 10);
         }
     }
 
