@@ -5,7 +5,7 @@
 import Foundation
 import Files
 
-class Chart {
+public class Chart {
     static let TEMP_PATH    = NSTemporaryDirectory() as String;
 
     private let width: Int;
@@ -13,14 +13,14 @@ class Chart {
 
     let svg : Svg;
 
-    init(width: Int, height: Int) {
+    public init(width: Int, height: Int) {
         self.width = max(width, 100);
         self.height = max(height, 100);
 
         self.svg = Svg(width: self.width, height: self.height);
     }
 
-    func draw(data: [Double], series: [String]) -> Data? {
+    public func draw(data: [Double], series: [String]) -> Data? {
         // Ищем минимальное и максимальное значение в данных
         guard let minValue = getMinValue(value: data.min()), let maxValue = data.max() else {
             print("Min or Max value not found");
