@@ -2,4 +2,4 @@
 .build
 cmake-build-debug
 Packages
-Sources/SwiftClickHouse/main.swift
+Sources/SwiftChart/main.swift
