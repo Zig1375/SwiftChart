@@ -1,0 +1,25 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CRsvg",
+        "repositoryURL": "/Users/zig/Projects/swift/Linux/CRsvg",
+        "state": {
+          "branch": null,
+          "revision": "fa55dc61c6df92e30467dd5ea27d8953e86bf38b",
+          "version": "0.0.3"
+        }
+      },
+      {
+        "package": "Files",
+        "repositoryURL": "https://github.com/JohnSundell/Files",
+        "state": {
+          "branch": null,
+          "revision": "6171f9e9d8619678da22355560f3dbed6368058d",
+          "version": "2.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
