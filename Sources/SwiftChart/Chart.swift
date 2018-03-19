@@ -35,6 +35,7 @@ public class Chart {
         // Рисуем график
         drawChart(step: info.step, cntSteps: info.cntSteps, down: info.down, up: info.up, data: data, series: series);
 
+        print(self.svg.render())
         return toPng(svg: self.svg.render());
     }
 
