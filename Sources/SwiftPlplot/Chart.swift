@@ -45,7 +45,13 @@ class Chart {
             let file = try folder.createFile(named: name);
             try file.write(string : svg);
 
-            let result = shell(launchPath: "/usr/local/bin/rsvg-convert", arguments: ["-w", "\(self.width)", "-h", "\(self.height)", "\(Chart.TEMP_PATH)/\(name)"]);
+            var cmd = "/usr/local/bin/rsvg-convert";
+
+#if os(Linux)
+            cmd = "/usr/bin/rsvg-convert";
+#endif
+
+            let result = shell(launchPath: cmd, arguments: ["-w", "\(self.width)", "-h", "\(self.height)", "\(Chart.TEMP_PATH)/\(name)"]);
             let _ = try? file.delete();
 
             return result;
