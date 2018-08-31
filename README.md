@@ -1,31 +1,14 @@
-[![Build Status](https://travis-ci.org/Zig1375/SwiftClickHouse.svg?branch=master)](https://travis-ci.org/Zig1375/SwiftClickHouse)
-
 ## Introduction
 
-ClickHouse Swift client library.
-
-Now supported ONLY MacOs
+Charts for swift 4.
 
 ## Here is an example on how to use it:
 
 ### Connection
 
 ```swift
-import SwiftClickHouse;
+import SwiftChart;
 
-do {
-    // let conn = try Connection(); /// Will use defaults values
-    let conn = try Connection(host : "localhost", port : 9000, database : "default", user : "default", password : "", compression : .Disable);
-    
-
-    // YOUR CODE HERE
-}  catch ClickHouseError.Error(let code, let display_text, let exception) {
-    print("\(errno) : \(error)");
-} catch {
-    print("Unknown error");
-}
+let chart = Chart(width: 500, height: 300);
+let data: Data? = chart.draw(data: [61394, 52905, 70000], series: ["2015", "2016", "2017"]);
 ```
-
-#### Attention
-
-Compression not implemented now.
